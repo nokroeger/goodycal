@@ -1,0 +1,31 @@
+{
+  "name": "goodycal",
+  "private": true,
+  "version": "0.0.9",
+  "description": "Node.js app serving a calendar with goodies and treats for each day of waiting for a special event",
+  "author": "Nils Oliver Kröger <me@nokroeger.de>",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev-docker": "../node_modules/nodemon/bin/nodemon.js --debug=5858",
+    "dev-host": "nodemon --debug=5858",
+    "start-watch": "nodemon index.js --inspect=0.0.0.0:9229",
+    "start-wait-debuger": "nodemon index.js --inspect-brk=0.0.0.0:9229",
+    "test": "cross-env NODE_ENV=test PORT=8081 mocha --timeout 10000 --exit --inspect=0.0.0.0:9230",
+    "test-watch": "nodemon --exec \"npm test\"",
+    "test-wait-debuger": "cross-env NODE_ENV=test PORT=8081 mocha --no-timeouts --exit --inspect-brk=0.0.0.0:9230"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4"
+  }
+}

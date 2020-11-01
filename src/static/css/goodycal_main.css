@@ -1,0 +1,266 @@
+.door .front img {
+    height: 100%;
+    width: auto;
+}
+
+.door .front h5{
+    position: absolute;
+    font-family: 'Kalam', cursive;
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2);     
+}
+
+.calendar-title h1{
+    font-family: 'Kalam', cursive;
+    color: #ffffff;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.2); 
+}
+
+.calendar-title p{
+    font-family: 'Kalam', cursive;
+    color: #ffffff;
+    font-size: 1.5em;    
+}
+
+.calendar-title .spacer{
+    visibility: hidden;
+}
+
+/* default calendar grid: optimized for small screens, like mobile devices */
+.calendar-grid {
+    display: grid;
+    width: 96%;
+    max-width: 900px;
+    margin: 2% auto;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 25px;   
+    background: #8d0000;
+
+    /* 2020 Advent calendar: 26 days */
+    grid-template-areas:    "t      t       t"
+                            "d23    d20     d12"
+                            "d2     d14     d4"
+                            "d24     d22     d16"
+                            "d1     d7      d9"
+                            "d10    d25     d18"
+                            "d13    d3      d15"
+                            "d6     d17     d8"
+                            "d19    d26     d21"
+                            "d11    d5     f"
+}
+
+/* extended display for larget screens */
+@media only screen and (min-width: 900px) {
+   
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas:    "t      t       t       d2      d7      d8  d15"
+                            "t      t       t       d4      d11     d12 d3"
+                            "t      t       t       d19     d9      d13 d23"
+                            "d5     d24     d26     d26     d25     d22 d10"
+                            "d6     d1      d26     d26     d21     d20 d18"
+                            "d17    f1      d26     d26     f2     d14 d16";
+  }
+
+  .calendar-title {
+    transform: rotate(-45deg);
+  }
+   
+}
+
+  .calendar-title {
+    grid-area: t;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .calendar-day-1 {
+    grid-area: d1;
+  }
+  .calendar-day-2 {
+    grid-area: d2;
+  }
+  .calendar-day-3 {
+    grid-area: d3;
+  }
+  .calendar-day-4 {
+    grid-area: d4;
+  }
+  .calendar-day-5 {
+    grid-area: d5;
+  }
+  .calendar-day-6 {
+    grid-area: d6;
+  }
+  .calendar-day-7 {
+    grid-area: d7;
+  }
+  .calendar-day-8 {
+    grid-area: d8;
+  }
+  .calendar-day-9 {
+    grid-area: d9;
+  }
+  .calendar-day-10 {
+    grid-area: d10;
+  }           
+  .calendar-day-11 {
+    grid-area: d11;
+  }
+  .calendar-day-12 {
+    grid-area: d12;
+  }
+  .calendar-day-13 {
+    grid-area: d13;
+  }
+  .calendar-day-14 {
+    grid-area: d14;
+  }
+  .calendar-day-15 {
+    grid-area: d15;
+  }             
+  .calendar-day-16 {
+    grid-area: d16;
+  }
+  .calendar-day-17 {
+    grid-area: d17;
+  }
+  .calendar-day-18 {
+    grid-area: d18;
+  }
+  .calendar-day-19 {
+    grid-area: d19;
+  }
+  .calendar-day-20 {
+    grid-area: d20;
+  }
+  .calendar-day-21 {
+    grid-area: d21;
+  }
+  .calendar-day-22 {
+    grid-area: d22;
+  }
+  .calendar-day-23 {
+    grid-area: d23;
+  }
+  .calendar-day-24 {
+    grid-area: d24;
+  }
+  .calendar-day-25 {
+    grid-area: d25;
+  }
+  .calendar-day-26 {
+    grid-area: d26;
+  }    
+
+
+.calendar-grid div {
+  border-radius: 20px;
+}
+
+.calendar-grid input {
+  display: none;
+}
+
+label {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+ 
+  display: flex;
+  min-height: 100%;
+  height: 120px;
+  width: 100%;
+}
+
+.door {
+  width: 100%;
+
+}
+
+.door { /*.unlocked?*/
+  transform-style: preserve-3d;
+  transition: all 300ms;
+  /*border: 2px dashed transparent;*/
+}
+
+/*
+:not(:checked) + .door.unlocked.today {
+    border-color: #ffffff;
+}*/
+
+.door div {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+ }
+
+ .door .front {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffff; 
+ }
+ 
+ .door .back {
+
+   background-color: #cfb53b;
+   transform: rotateY(180deg);
+ }
+
+/*
+label:hover .door.unlocked {
+  border-color: #cfb53b;
+}*/
+
+/*
+label:hover .door.unlocked.today {
+  border-color: #cfb53b;
+}*/
+ 
+:checked + .door.unlocked {
+  transform: rotateY(180deg);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+:checked + .door .video-container iframe{
+    display: initial
+}
+
+  
+
+
+

@@ -1,0 +1,23 @@
+html
+  head
+    title #{title}
+    script(src='js/lazysizes.min.js' async)
+    link(rel='stylesheet', href='css/goodycal_main.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Kalam')
+  body
+    section(class='calendar-grid')
+        div(class='calendar-title')
+            p(class='spacer') X
+            h1 #{title}
+            p #{subtitle}
+        each day, i in calendar_days
+            div(class='calendar-day-'+(i+1))
+                label
+                    input(type='checkbox')
+                    div(class='door '+day.doorclass)
+                        div(class='front') 
+                            img(src='/img/door.jpg')
+                            h5 #{day.doordate.substring(8).replace(/^0/, '')}
+                        div(class='back video-container')
+                            iframe(data-src='https://www.youtube-nocookie.com/embed/eGhkMzG-yWc?rel=0' class="lazyload" frameborder='0' allowfullscreen='allowfullscreen')
+        
