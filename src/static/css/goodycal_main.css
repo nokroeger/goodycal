@@ -38,12 +38,14 @@
     max-height: 100%;
 }
 
-.calendar-page{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%)
+
+body {
+  background-image: url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/DSC_2324.JPG_200-ad21d88d2eb3c0e1aba23c832bbb1de9.JPG), url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/Gruppenschwung--1-0.JPG_200-7ab38d9a20719ce0955786e2116bf0d6.JPG), url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/DSC_2324.JPG_200-ad21d88d2eb3c0e1aba23c832bbb1de9.JPG), url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/Gruppenschwung--1-0.JPG_200-7ab38d9a20719ce0955786e2116bf0d6.JPG);
+  background-size: 50% auto, 50% auto, 50% auto, 50% auto;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed;
+  background-position: top left, top right, bottom right, bottom left;
+  background-color: #9971b6
 }
 
 /* default calendar grid: optimized for small screens, like mobile devices */
@@ -56,10 +58,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-gap: 25px;   
-    background: #8d0000;
+    background: #551285;
 
     /* 2020 Advent calendar: 26 days */
-    grid-template-areas:    "t      t       t"
+    grid-template-areas:    "t      t      t"
                             "d23    d20     d12"
                             "d2     d14     d4"
                             "d24     d22     d16"
@@ -68,7 +70,8 @@
                             "d13    d3      d15"
                             "d6     d17     d8"
                             "d19    d26     d21"
-                            "d11    d5     f"
+                            "d11    d5     x"
+                            "f      f      f"
 }
 
 .calendar-footer {
@@ -81,6 +84,16 @@
 
 /* extended display for larget screens */
 @media only screen and (min-width: 900px) {
+
+  /* default calender page */
+  .calendar-page{
+      margin: 0;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)    
+  }   
    
   .calendar-grid {
     grid-template-columns: repeat(7, 1fr);
@@ -96,6 +109,19 @@
     transform: rotate(-45deg);
   }
    
+}
+
+@media only screen and (max-width: 800px){
+/* default calender page */
+.calendar-page{
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 98%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)    
+} 
 }
 
   .calendar-title {
