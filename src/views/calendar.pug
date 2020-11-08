@@ -10,6 +10,10 @@ html
             p(class='spacer') X
             h1 #{title}
             p #{subtitle}
+        div(class='calendar-text')
+            p(class='spacer')
+            p #{text1}
+            p #{text2}
         each day, i in calendar_days
             div(class='calendar-day-'+(i+1))
                 label

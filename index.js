@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 
 app.get('/show', function (req, res) {
   console.log(calculateNumberOfDaysOnCalendar(calendar_start_date, calendar_end_date))
-  res.render('calendar', { title: "Musikalischer\nAdventskalender", subtitle: "der St. Petri Gemeinde in Melle", calendar_days: generateCalendarDays(calendar_start_date, calendar_end_date)})
+  res.render('calendar', { title: "Musikalischer\nAdventskalender", subtitle: "der St. Petri Gemeinde in Melle", text1: "Bläsermusik und Texte", text2: "mit den Posaunenchören und der evangelischen Jugend.", calendar_days: generateCalendarDays(calendar_start_date, calendar_end_date)})
 });
 
 app.get('/healthz', function (req, res) {
