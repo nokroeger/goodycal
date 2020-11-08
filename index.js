@@ -1,10 +1,12 @@
 
 const express = require('express');
 const morgan = require('morgan');
+const moment = require('moment');
+const fs = require('fs');
 
 const app = express();
 
-const moment = require('moment');
+
 
 app.use(morgan('common'));
 app.use(express.static('src/static'));
@@ -12,17 +14,12 @@ app.use(express.static('src/static'));
 app.set('views', './src/views')
 app.set('view engine', 'pug')
 
-const calendar_start_date = "2020-10-30"
-const calendar_end_date = "2020-11-24"
-
-
 app.get('/', function (req, res) {
   res.redirect('/show')
 });
 
 app.get('/show', function (req, res) {
-  console.log(calculateNumberOfDaysOnCalendar(calendar_start_date, calendar_end_date))
-  res.render('calendar', { title: "Musikalischer\nAdventskalender", subtitle: "der St. Petri Gemeinde in Melle", text1: "Bläsermusik und Texte", text2: "mit den Posaunenchören und der evangelischen Jugend.", calendar_days: generateCalendarDays(calendar_start_date, calendar_end_date)})
+  res.render('calendar', { title: "Musikalischer\nAdventskalender", subtitle: "der St. Petri Gemeinde in Melle", text1: "Bläsermusik und Texte", text2: "mit den Posaunenchören und der evangelischen Jugend.", calendar_days: generateCalendarDays()})
 });
 
 app.get('/healthz', function (req, res) {
@@ -59,15 +56,17 @@ function calculateDoorState(check_date) {
   }
 }
 
-function generateCalendarDays(start_date, end_date) {
-  var the_day = moment(start_date)
-  const number_of_days = calculateNumberOfDaysOnCalendar(start_date, end_date)
+function generateCalendarDays(){
+  var calendar = JSON.parse(fs.readFileSync('src/data/calendar.json', 'utf-8'))
+  var the_day = moment(calendar.start_date)
+  const number_of_days = calculateNumberOfDaysOnCalendar(calendar.start_date, calendar.end_date)
   var calendar_days = []
   for (i = 0; i < number_of_days; i++){
-    calendar_days[i] = {"doordate": the_day.format("YYYY-MM-DD"), "doorclass": calculateDoorState(the_day)}
+    calendar_days[i] = {"doordate": the_day.format("YYYY-MM-DD"), "doorclass": calculateDoorState(the_day), "goody": calendar.goodies[the_day.format("YYYY-MM-DD")]}
     the_day.add(1, "day")
   }
-  return calendar_days
+  return calendar_days;
+
 }
 
 module.exports = app;
