@@ -40,11 +40,11 @@
 
 
 body {
-  background-image: url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/DSC_2324.JPG_200-ad21d88d2eb3c0e1aba23c832bbb1de9.JPG), url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/Gruppenschwung--1-0.JPG_200-7ab38d9a20719ce0955786e2116bf0d6.JPG), url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/DSC_2324.JPG_200-ad21d88d2eb3c0e1aba23c832bbb1de9.JPG), url(https://cdn.max-e5.info/damfiles/hp_slider_img_big/st_petri_melle/dokumente-homepage/Gruppenschwung--1-0.JPG_200-7ab38d9a20719ce0955786e2116bf0d6.JPG);
-  background-size: 50% auto, 50% auto, 50% auto, 50% auto;
-  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-  background-attachment: fixed, fixed, fixed, fixed;
-  background-position: top left, top right, bottom right, bottom left;
+  background-image: url(https://cdn.max-e5.info/damfiles/article/st_petri_melle/kirchenmusik/posaunenchoere/jugendposaunenchor/materialsammlung-jugendposaunenchor/Gruppenfoto.JPG_200-75bab1417d5e5e8ffdbff324d5465db7.JPG), url(https://cdn.max-e5.info/damfiles/article/st_petri_melle/kirchenmusik/posaunenchoere/posaunenchor-in-st-petri/DSC_0046.JPG_200-e49bf2c8b113ee0c40ed9e6f5ff584d9.JPG);
+  background-size: 50% auto, 50% auto;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-position: bottom right, top left;
   background-color: #9971b6
 }
 
@@ -351,6 +351,12 @@ label:hover .door.unlocked.today {
 }
 
 .impressum p{
+    font-family: 'Kalam';
+    color: #000000;
+    font-size: 1em;
+}
+
+.impressum li{
     font-family: 'Kalam';
     color: #000000;
     font-size: 1em;
