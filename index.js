@@ -13,6 +13,7 @@ app.use(express.static('src/static'));
 
 app.set('views', './src/views')
 app.set('view engine', 'pug')
+process.env.TZ = 'Europe/Berlin' 
 
 app.get('/', function (req, res) {
   res.redirect('/show')
@@ -36,8 +37,6 @@ function dayBeganInThePast(check_date) {
 
 function dayIsToday(check_date) {
   let now = moment();
-  console.log(check_date)
-  console.log(now)
   return check_date.isSame(now, 'day');
 }
 
