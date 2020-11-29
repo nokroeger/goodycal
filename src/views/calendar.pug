@@ -1,6 +1,7 @@
 html
   head
     title #{title}
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
     script(src='js/lazysizes.min.js' async)
     link(rel='stylesheet', href='css/goodycal_main.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Kalam')
@@ -37,7 +38,7 @@ html
                                 img(src='/img/door.jpg')
                                 h5 #{day.doordate.substring(8).replace(/^0/, '')}
                             div(class='back video-container')
-                                iframe(data-src=day.goody class="lazyload" frameborder='0' allowfullscreen='allowfullscreen')
+                                iframe(data-src=day.goody class="lazyload" frameborder='0' allowfullscreen='allowfullscreen')                        
         section(class='calendar-footer')
             a(href='html/impressum.html') Impressum
         

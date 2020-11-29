@@ -9,7 +9,11 @@
 }
 
 .door .front h5{
+  
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -133%);
     font-family: 'Kalam', cursive;
     color: #ffffff;
     font-size: 2em;
@@ -45,11 +49,13 @@
 
 
 body {
+
   background-image: url(https://cdn.max-e5.info/damfiles/article/st_petri_melle/kirchenmusik/posaunenchoere/jugendposaunenchor/materialsammlung-jugendposaunenchor/Gruppenfoto.JPG_200-75bab1417d5e5e8ffdbff324d5465db7.JPG), url(https://cdn.max-e5.info/damfiles/article/st_petri_melle/kirchenmusik/posaunenchoere/posaunenchor-in-st-petri/DSC_0046.JPG_200-e49bf2c8b113ee0c40ed9e6f5ff584d9.JPG);
   background-size: 50% auto, 50% auto;
   background-repeat: no-repeat, no-repeat;
   background-attachment: fixed, fixed;
   background-position: bottom right, top left;
+  
   background-color: #9971b6
 }
 
@@ -59,11 +65,14 @@ body .impressum{
 
 /* default calendar grid: optimized for small screens, like mobile devices */
 .calendar-grid {
+    display: -ms-grid;
     display: grid;
     width: 96%;
     max-width: 900px;
     margin: 0% auto;
 
+    -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 240px 25px 120px 25px 120px 25px 120px 25px 120px 25px 120px 25px 120px 25px 120px 25px 120px 25px 180px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-gap: 25px;   
@@ -112,6 +121,8 @@ body .impressum{
   }   
    
   .calendar-grid {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 120px 25px 120px 25px 120px 25px 120px 25px 120px 25px 120px;
     grid-template-columns: repeat(7, 1fr);
     grid-template-areas:    "t      t       t       d25       d7      d8  d15"
                             "t      t       t       d4      d11     d12 d3"
@@ -122,22 +133,137 @@ body .impressum{
   }
 
   .calendar-day-25 {
+      -ms-grid-column: 4;
+      -ms-grid-row: 1;
       grid-area: d25;
       display: inherit;
   }
   
   .calendar-day-26 {
+      -ms-grid-column: 5;
+      -ms-grid-row: 11;    
       grid-area: d26;
       display: inherit;
   } 
 
   .calendar-title {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 5;
+    -ms-grid-column-span: 3;
     transform: rotate(-45deg);
   }
+
+  .calendar-day-1 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 9;    
+  }
+  .calendar-day-2 {
+    -ms-grid-column: 5;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-3 {
+    -ms-grid-column: 7;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-4 {
+    -ms-grid-column: 4;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-5 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-6 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 9;    
+  }
+  .calendar-day-7 {
+    -ms-grid-column: 5;
+    -ms-grid-row: 1;    
+  }
+  .calendar-day-8 {
+    -ms-grid-column: 6;
+    -ms-grid-row: 1;    
+  }
+  .calendar-day-9 {
+    -ms-grid-column: 5;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-10 {
+    -ms-grid-column: 7;
+    -ms-grid-row: 7;    
+  }           
+  .calendar-day-11 {
+    -ms-grid-column: 5;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-12 {
+    -ms-grid-column: 6;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-13 {
+    -ms-grid-column: 6;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-14 {
+    -ms-grid-column: 4;
+    -ms-grid-row: 11;    
+  }
+  .calendar-day-15 {
+    -ms-grid-column: 7;
+    -ms-grid-row: 1;    
+  }             
+  .calendar-day-16 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-17 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 11;    
+  }
+  .calendar-day-18 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 11;    
+  }
+  .calendar-day-19 {
+    -ms-grid-column: 4;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-20 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 11;    
+  }
+  .calendar-day-21 {
+    -ms-grid-column: 5;
+    -ms-grid-row: 9;    
+
+  }
+  .calendar-day-22 {
+    -ms-grid-column: 6;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-23 {
+    -ms-grid-column: 7;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-24 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 7;    
+    -ms-grid-column-span: 2;
+    -ms-grid-row-span: 3;
+  }   
+
+  .calendar-text {
+    -ms-grid-column: 6;
+    -ms-grid-row: 9;
+    -ms-grid-column-span: 2;    
+    -ms-grid-row-span: 3;    
+  }   
    
 }
 
-@media only screen and (max-width: 899px){
+@media only screen and (max-width: 899px), screen and (max-height: 899px){
 /* default calender page */
 .calendar-page{
     margin: 0;
@@ -147,7 +273,117 @@ body .impressum{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)    
-} 
+}
+
+  .calendar-title {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column-span: 3;
+    -ms-grid-row-span: 2;
+  }
+
+  .calendar-text {
+    -ms-grid-column: 1;
+    -ms-grid-row: 19;
+    -ms-grid-column-span: 3;    
+   }  
+  .calendar-day-1 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 9;    
+  }
+  .calendar-day-2 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-3 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 13;    
+  }
+  .calendar-day-4 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-5 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 17;    
+  }
+  .calendar-day-6 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 15;    
+  }
+  .calendar-day-7 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 9;    
+  }
+  .calendar-day-8 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 15;    
+  }
+  .calendar-day-9 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 9;    
+  }
+  .calendar-day-10 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 11;    
+  }           
+  .calendar-day-11 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-12 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-13 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 13;    
+  }
+  .calendar-day-14 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 5;    
+  }
+  .calendar-day-15 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 13;    
+  }             
+  .calendar-day-16 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-17 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 15;    
+  }
+  .calendar-day-18 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 11;    
+  }
+  .calendar-day-19 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 17;    
+  }
+  .calendar-day-20 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-21 {
+    -ms-grid-column: 3;
+    -ms-grid-row: 17;    
+  }
+  .calendar-day-22 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 7;    
+  }
+  .calendar-day-23 {
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;    
+  }
+  .calendar-day-24 {
+    -ms-grid-column: 2;
+    -ms-grid-row: 11;    
+  }
+
 }
 
   .calendar-title {
@@ -283,34 +519,47 @@ label {
   
  }
 
- .door .front {
+ .door .front { 
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+  
   text-align: center;
   font-size: 1.2rem;
   color: #ffffff; 
  }
  
  .door .back {
-
    background-color: #cfb53b;
    transform: rotateY(180deg);
  }
 
 
-label:hover .door.unlocked {
-  border-color: #cfb53b;
+label:hover .door.unlocked .front h5{
+  /*border-color: #cfb53b;*/
+  color: #cfb53b;
 }
 
-
+/*
 label:hover .door.unlocked.today {
   border-color: #cfb53b;
-}
+}*/
  
 :checked + .door.unlocked {
   transform: rotateY(180deg);
+}
+
+
+:checked + .door.unlocked .front {
+  -ms-transform: rotateY(180deg)
+}
+
+:checked + .door.unlocked .back {
+  -ms-transform: rotateY(0deg)
+}
+:checked + .door.unlocked .back iframe {
+  -ms-transform: rotateY(180deg)
 }
 
 .video-container {
@@ -321,9 +570,9 @@ label:hover .door.unlocked.today {
     overflow: hidden;
 }
 
-.video-container iframe,
-.video-container object,
-.video-container embed {
+:not(:checked) + .door .video-container iframe,
+:not(:checked) + .door .video-container object,
+:not(:checked) + .door .video-container embed {
     position: absolute;
     top: 0;
     left: 0;
@@ -332,8 +581,8 @@ label:hover .door.unlocked.today {
     display: none;
 }
 
-:checked + .door .video-container iframe{
-    display: initial
+:checked + .door .video-container iframe {  
+    display: initial;
 }
 
 .calendar-footer a{
