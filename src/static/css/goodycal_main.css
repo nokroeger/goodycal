@@ -3,6 +3,11 @@
     width: auto;
 }
 
+.door .blind img {
+    height: 100%;
+    width: auto;
+}
+
 .door .front h5{
     position: absolute;
     font-family: 'Kalam', cursive;
@@ -68,15 +73,22 @@ body .impressum{
     grid-template-areas:    "t      t      t"
                             "d23    d20     d12"
                             "d2     d14     d4"
-                            "d24     d22     d16"
+                            "d11     d22     d16"
                             "d1     d7      d9"
-                            "d10    d25     d18"
+                            "d10    d24     d18"
                             "d13    d3      d15"
                             "d6     d17     d8"
-                            "d19    d26     d21"
-                            "d11    d5     x"
+                            "d19    d5     d21"
                             "f      f      f"
 }
+
+.calendar-day-25 {
+  display: none;
+}
+
+.calendar-day-26 {
+  display: none;
+} 
 
 .calendar-footer {
     display: grid;
@@ -101,13 +113,23 @@ body .impressum{
    
   .calendar-grid {
     grid-template-columns: repeat(7, 1fr);
-    grid-template-areas:    "t      t       t       d2      d7      d8  d15"
+    grid-template-areas:    "t      t       t       d25       d7      d8  d15"
                             "t      t       t       d4      d11     d12 d3"
                             "t      t       t       d19     d9      d13 d23"
-                            "d5     d24     d26     d26     d25     d22 d10"
-                            "d6     d1      d26     d26     d21     f   f"
-                            "d17    d20     d18     d14     d16     f   f";
+                            "d5     d16     d24     d24     d2      d22 d10"
+                            "d6     d1      d24     d24     d21     f   f"
+                            "d17    d20     d18     d14     d26       f   f";
   }
+
+  .calendar-day-25 {
+      grid-area: d25;
+      display: inherit;
+  }
+  
+  .calendar-day-26 {
+      grid-area: d26;
+      display: inherit;
+  } 
 
   .calendar-title {
     transform: rotate(-45deg);
@@ -211,13 +233,7 @@ body .impressum{
   }
   .calendar-day-24 {
     grid-area: d24;
-  }
-  .calendar-day-25 {
-    grid-area: d25;
-  }
-  .calendar-day-26 {
-    grid-area: d26;
-  }    
+  }   
 
 
 .calendar-grid div {

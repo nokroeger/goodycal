@@ -15,6 +15,19 @@ html
                 p(class='spacer')
                 p #{text1}
                 p #{text2}
+            div(class='calendar-day-25')
+                label
+                    input(type='checkbox')            
+                    div(class="door locked")
+                        div(class='blind') 
+                            img(src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Star_icon.png')
+            div(class='calendar-day-26')
+                label
+                    input(type='checkbox')            
+                    div(class="door locked")
+                        div(class='blind') 
+                            img(src='https://upload.wikimedia.org/wikipedia/commons/3/3b/Star_icon.png')
+                    
             each day, i in calendar_days
                 div(class='calendar-day-'+(i+1))
                     label
